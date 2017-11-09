@@ -6,6 +6,7 @@
         "exception", "http-status-code", "http-code", "httpcode", "type"
     ],
     "homepage": "https://github.com/MAJA-Lin/http-exception",
+    "license": "MIT",
     "authors": [{
         "name": "Scott Lin",
         "homepage": "https://github.com/MAJA-Lin"
