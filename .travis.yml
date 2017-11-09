@@ -1,0 +1,29 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - hhvm
+
+matrix:
+    allow_failures:
+        - php: hhvm
+
+notifications:
+  email:
+    recipients:
+      - 11385444+MAJA-LIN@users.noreply.github.com
+    on_success: never # default: change
+    on_failure: always
+
+before_script:
+  - composer install --prefer-dist --optimize-autoloader --quiet --no-interaction
+  - mkdir -p build/reports
+
+script:
+  - vendor/bin/phpunit --coverage-html build/reports
+
+after_script:
+
+
+sudo: false
