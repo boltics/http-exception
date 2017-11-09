@@ -16,8 +16,8 @@ composer require majalin\http-exception
 ## Declaration
 
 ```php
-use HttpException\Exception;
-use HttpException\HttpCodeInterface;
+use MajaLin\HttpException\Exception;
+use MajaLin\HttpException\HttpCodeInterface;
 ```
 
 

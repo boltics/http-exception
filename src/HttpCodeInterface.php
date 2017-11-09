@@ -1,6 +1,6 @@
 <?php
 
-namespace HttpException;
+namespace MajaLin\HttpException;
 
 /**
  * Common error http status code

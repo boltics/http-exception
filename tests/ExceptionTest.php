@@ -1,11 +1,11 @@
 <?php
 
-namespace HttpException\Tests;
+namespace MajaLin\HttpException\Tests;
 
 use PHPUnit\Framework\TestCase;
-use HttpException\Exception;
-use HttpException\HttpCodeInterface;
-use HttpException\Tests\TestException;
+use MajaLin\HttpException\Exception;
+use MajaLin\HttpException\HttpCodeInterface;
+use MajaLin\HttpException\Tests\TestException;
 
 class ExceptionTest extends TestCase
 {

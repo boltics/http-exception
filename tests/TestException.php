@@ -1,9 +1,9 @@
 <?php
 
-namespace HttpException\Tests;
+namespace MajaLin\HttpException\Tests;
 
-use HttpException\Exception;
-use HttpException\HttpCodeInterface;
+use MajaLin\HttpException\Exception;
+use MajaLin\HttpException\HttpCodeInterface;
 
 class TestException extends Exception
 {

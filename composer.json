@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "HttpException\\": "src/"
+            "MajaLin\\HttpException\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "HttpException\\Tests\\":  "tests/"
+            "MajaLin\\HttpException\\Tests\\":  "tests/"
         }
     }
 }
