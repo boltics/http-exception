@@ -29,7 +29,8 @@ $errorInfo = [
 
 throw new Exception($errorInfo);
 
-// or
+// For Laravel Response
+// You can use one exception to manage both error code and http code
 
 class CustomizedException extends Exception
 {
@@ -40,7 +41,14 @@ class CustomizedException extends Exception
     ];
 }
 
-throw new CustomizedException(CustomizedException::FIRST_ERROR);
+try {
+    // do something
+    throw new CustomizedException(CustomizedException::FIRST_ERROR);
+} catch (CustomizedException $e) {
+    return $reponse()->json($data, $e->getHttpCode())
+}
+
+
 ```
 
 ## Documentation
