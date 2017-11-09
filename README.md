@@ -1,4 +1,7 @@
 # PHP Exception with http status code
+[![Build Status](https://travis-ci.org/MAJA-Lin/http-exception.svg?branch=master)](https://travis-ci.org/MAJA-Lin/http-exception)
+[![Coverage Status](https://coveralls.io/repos/github/MAJA-Lin/http-exception/badge.svg?branch=master)](https://coveralls.io/github/MAJA-Lin/http-exception?branch=master)
+
 
 A exception that extends PHP exception and also contains http status code.
 
