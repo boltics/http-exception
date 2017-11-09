@@ -1,0 +1,29 @@
+{
+    "name": "majalin/http-exception",
+    "type": "library",
+    "description": "An exception that contains http status code",
+    "keywords": [
+        "exception", "http-status-code", "http-code", "httpcode", "type"
+    ],
+    "homepage": "https://github.com/MAJA-Lin/http-exception",
+    "authors": [{
+        "name": "Scott Lin",
+        "homepage": "https://github.com/MAJA-Lin"
+    }],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HttpException\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HttpException\\Tests\\":  "tests/"
+        }
+    }
+}

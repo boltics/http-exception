@@ -1,0 +1,12 @@
+.DS_Store
+
+# phpstorm
+.idea/*
+
+# composer
+composer.lock
+composer.phar
+vendor/*
+
+# reports
+tests/reports/*
