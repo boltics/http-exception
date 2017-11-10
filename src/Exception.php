@@ -1,8 +1,8 @@
 <?php
 
-namespace MajaLin\HttpException;
+namespace Boltics\HttpException;
 
-use MajaLin\HttpException\HttpCodeInterface;
+use Boltics\HttpException\HttpCodeInterface;
 
 class Exception extends \Exception
 {

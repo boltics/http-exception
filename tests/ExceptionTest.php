@@ -1,11 +1,11 @@
 <?php
 
-namespace MajaLin\HttpException\Tests;
+namespace Boltics\HttpException\Tests;
 
 use PHPUnit\Framework\TestCase;
-use MajaLin\HttpException\Exception;
-use MajaLin\HttpException\HttpCodeInterface;
-use MajaLin\HttpException\Tests\TestException;
+use Boltics\HttpException\Exception;
+use Boltics\HttpException\HttpCodeInterface;
+use Boltics\HttpException\Tests\TestException;
 
 class ExceptionTest extends TestCase
 {

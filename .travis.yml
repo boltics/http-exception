@@ -12,7 +12,7 @@ matrix:
 notifications:
   email:
     recipients:
-      - 11385444+MAJA-LIN@users.noreply.github.com
+      - team@boltics.com
     on_success: never # default: change
     on_failure: always
 

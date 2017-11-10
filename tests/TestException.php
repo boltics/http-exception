@@ -1,9 +1,9 @@
 <?php
 
-namespace MajaLin\HttpException\Tests;
+namespace Boltics\HttpException\Tests;
 
-use MajaLin\HttpException\Exception;
-use MajaLin\HttpException\HttpCodeInterface;
+use Boltics\HttpException\Exception;
+use Boltics\HttpException\HttpCodeInterface;
 
 class TestException extends Exception
 {
