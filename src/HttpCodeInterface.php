@@ -1,6 +1,6 @@
 <?php
 
-namespace MajaLin\HttpException;
+namespace Boltics\HttpException;
 
 /**
  * Common error http status code

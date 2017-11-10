@@ -1,6 +1,6 @@
 # PHP Exception with http status code
-[![Build Status](https://travis-ci.org/MAJA-Lin/http-exception.svg?branch=master)](https://travis-ci.org/MAJA-Lin/http-exception)
-[![Coverage Status](https://coveralls.io/repos/github/MAJA-Lin/http-exception/badge.svg?branch=master)](https://coveralls.io/github/MAJA-Lin/http-exception?branch=master)
+[![Build Status](https://travis-ci.org/Boltics/http-exception.svg?branch=master)](https://travis-ci.org/Boltics/http-exception)
+[![Coverage Status](https://coveralls.io/repos/github/Boltics/http-exception/badge.svg?branch=master)](https://coveralls.io/github/Boltics/http-exception?branch=master)
 
 
 A exception that extends PHP exception and also contains http status code.
@@ -11,13 +11,13 @@ Now you can easily
 ## Installation
 
 ```
-composer require majalin\http-exception
+composer require boltics\http-exception
 ```
 ## Declaration
 
 ```php
-use MajaLin\HttpException\Exception;
-use MajaLin\HttpException\HttpCodeInterface;
+use Boltics\HttpException\Exception;
+use Boltics\HttpException\HttpCodeInterface;
 ```
 
 
