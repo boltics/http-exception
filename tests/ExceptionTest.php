@@ -4,7 +4,7 @@ namespace MajaLin\HttpException\Tests;
 
 use PHPUnit\Framework\TestCase;
 use MajaLin\HttpException\Exception;
-use MajaLin\HttpException\HttpCodeInterface;
+use Symfony\Component\HttpFoundation\Response;
 use MajaLin\HttpException\Tests\TestException;
 
 class ExceptionTest extends TestCase
@@ -31,7 +31,7 @@ class ExceptionTest extends TestCase
         ];
         $e = new Exception($errorInfo);
 
-        $this->assertEquals(HttpCodeInterface::BAD_REQUEST, $e->getHttpCode());
+        $this->assertEquals(Response::HTTP_BAD_REQUEST, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
     }
@@ -49,8 +49,8 @@ class ExceptionTest extends TestCase
         ];
         $e = new Exception($errorInfo);
 
-        $this->assertNotEquals(HttpCodeInterface::BAD_REQUEST, $e->getHttpCode());
-        $this->assertEquals(HttpCodeInterface::INTERNAL_SERVER_ERROR, $e->getHttpCode());
+        $this->assertNotEquals(Response::HTTP_BAD_REQUEST, $e->getHttpCode());
+        $this->assertEquals(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
     }
@@ -128,7 +128,7 @@ class ExceptionTest extends TestCase
      */
     public function testIsValidHttpCode()
     {
-        $this->assertTrue(Exception::isValidHttpCode(HttpCodeInterface::BAD_REQUEST));
+        $this->assertTrue(Exception::isValidHttpCode(Response::HTTP_BAD_REQUEST));
     }
 
     /**
