@@ -17,7 +17,7 @@ composer require boltics\http-exception
 
 ```php
 use Boltics\HttpException\Exception;
-use Boltics\HttpException\HttpCodeInterface;
+use Symfony\Component\HttpFoundation\Response;;
 ```
 
 
@@ -27,7 +27,7 @@ use Boltics\HttpException\HttpCodeInterface;
 $errorInfo = [
     'message' => 'Hola',
     'errorCode' => 1234,
-    'httpCode' => HttpCodeInterface::BAD_REQUEST
+    'httpCode' => Response::HTTP_BAD_REQUEST
 ];
 
 throw new Exception($errorInfo);
@@ -40,7 +40,7 @@ class CustomizedException extends Exception
     const FIRST_ERROR = [
         'message' => 'Hola',
         'errorCode' => 1234,
-        'httpCode' => HttpCodeInterface::BAD_REQUEST
+        'httpCode' => Response::HTTP_BAD_REQUEST
     ];
 }
 

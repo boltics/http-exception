@@ -2,7 +2,7 @@
 
 namespace Boltics\HttpException;
 
-use Boltics\HttpException\HttpCodeInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 class Exception extends \Exception
 {
@@ -26,7 +26,7 @@ class Exception extends \Exception
         if (isset($exception['httpCode']) && $this->isValidHttpCode($exception['httpCode'])) {
             $this->setHttpCode($exception['httpCode']);
         } else {
-            $this->setHttpCode(HttpCodeInterface::INTERNAL_SERVER_ERROR);
+            $this->setHttpCode(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -94,7 +94,7 @@ class Exception extends \Exception
             return false;
         }
 
-        $httpCodeInterface = new \ReflectionClass(HttpCodeInterface::class);
+        $httpCodeInterface = new \ReflectionClass(Response::class);
         if (!in_array($httpCode, $httpCodeInterface->getConstants())) {
             return false;
         }
