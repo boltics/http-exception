@@ -12,7 +12,7 @@
         "homepage": "https://github.com/MAJA-Lin"
     }],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.1",
         "symfony/http-foundation": "^4.1"
     },
     "require-dev": {
