@@ -144,7 +144,7 @@ class ExceptionTest extends TestCase
      */
     public function testIsValidHttpCodeWithCodeNotInList()
     {
-        $this->assertFalse(Exception::isValidHttpCode(200));
+        $this->assertFalse(Exception::isValidHttpCode(600));
     }
 
     /**
