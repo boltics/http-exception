@@ -1,6 +1,6 @@
 <?php
 
-namespace MajaLin\HttpException;
+namespace Boltics\HttpException;
 
 use Symfony\Component\HttpFoundation\Response;
 

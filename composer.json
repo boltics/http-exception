@@ -1,15 +1,15 @@
 {
-    "name": "majalin/http-exception",
+    "name": "boltics/http-exception",
     "type": "library",
     "description": "An exception that contains http status code",
     "keywords": [
         "exception", "http-status-code", "http-code", "httpcode", "type"
     ],
-    "homepage": "https://github.com/MAJA-Lin/http-exception",
+    "homepage": "https://github.com/boltics/http-exception",
     "license": "MIT",
     "authors": [{
-        "name": "Scott Lin",
-        "homepage": "https://github.com/MAJA-Lin"
+        "name": "Boltics team",
+        "homepage": "https://github.com/boltics/http-exception"
     }],
     "require": {
         "php": ">=7.1",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MajaLin\\HttpException\\": "src/"
+            "Boltics\\HttpException\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MajaLin\\HttpException\\Tests\\":  "tests/"
+            "Boltics\\HttpException\\Tests\\":  "tests/"
         }
     }
 }

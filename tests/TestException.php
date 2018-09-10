@@ -1,8 +1,8 @@
 <?php
 
-namespace MajaLin\HttpException\Tests;
+namespace Boltics\HttpException\Tests;
 
-use MajaLin\HttpException\Exception;
+use Boltics\HttpException\Exception;
 use Symfony\Component\HttpFoundation\Response;
 
 class TestException extends Exception
