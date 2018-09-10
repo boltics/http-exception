@@ -34,6 +34,7 @@ class ExceptionTest extends TestCase
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
+        $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
     }
 
     /**
@@ -53,6 +54,7 @@ class ExceptionTest extends TestCase
         $this->assertEquals(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
+        $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
     }
 
     /**
@@ -156,5 +158,6 @@ class ExceptionTest extends TestCase
         $this->assertEquals(TestException::FIRST_ERROR['httpCode'], $e->getHttpCode());
         $this->assertEquals(TestException::FIRST_ERROR['message'], $e->getMessage());
         $this->assertEquals(TestException::FIRST_ERROR['errorCode'], $e->getCode());
+        $this->assertEquals(TestException::FIRST_ERROR['errorCode'], $e->getErrorCode());
     }
 }

@@ -56,6 +56,16 @@ class Exception extends \Exception
     }
 
     /**
+     * An alternative way to get exception error code
+     *
+     * @return integer
+     */
+    public function getErrorCode(): int
+    {
+        return $this->getCode();
+    }
+
+    /**
      * Initialized error message and code if their is no input or the type is
      *  not \Exception::__construct() supported
      *
