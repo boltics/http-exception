@@ -17,7 +17,7 @@ composer require majalin\http-exception
 
 ```php
 use MajaLin\HttpException\Exception;
-use Symfony\Component\HttpFoundation\Response;;
+use Symfony\Component\HttpFoundation\Response;
 ```
 
 
