@@ -12,6 +12,11 @@ class Exception extends \Exception
     protected $httpCode = null;
 
     /**
+     * @var array Additional data you want to put
+     */
+    protected $additionalData = [];
+
+    /**
      *
      */
     public function __construct(array $exception)
@@ -63,6 +68,48 @@ class Exception extends \Exception
     public function getErrorCode(): int
     {
         return $this->getCode();
+    }
+
+    /**
+     * Set additionalData in exception
+     *
+     * @param array $additionalData
+     *
+     * @return HttpException\Exception
+     */
+    public function setAdditionalData(array $additionalData)
+    {
+        $this->additionalData = $additionalData;
+        return $this;
+    }
+
+    /**
+     * Get additional data
+     *
+     * @return array
+     */
+    public function getAdditionalData(): array
+    {
+        return $this->additionalData;
+    }
+
+    /**
+     * Append data into the additional data with key
+     *
+     * @param mixed $additionalData
+     * @param mixed $key = null
+     *
+     * @return HttpException\Exception
+     */
+    public function appendAdditionalData($additionalData, $key = null)
+    {
+        if (isset($key)) {
+            $this->additionalData[$key] = $additionalData;
+        } else {
+            $this->additionalData[] = $additionalData;
+        }
+
+        return $this;
     }
 
     /**
