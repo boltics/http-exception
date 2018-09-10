@@ -17,7 +17,7 @@ composer require boltics\http-exception
 
 ```php
 use Boltics\HttpException\Exception;
-use Symfony\Component\HttpFoundation\Response;;
+use Symfony\Component\HttpFoundation\Response;
 ```
 
 
@@ -59,6 +59,10 @@ try {
 - `__construct()` The constructor checks that the value exist in the enum
 - `getHttpCode()` Returns http code
 - `setHttpCode()` Set http code
+- `getErrorCode()` Another approach to get exception code
+- `setAdditionalData()` Set additional data
+- `getAdditionalData()` Get additional data
+- `appendAdditionalData()` Append data to the additional data
 
 Static methods:
 

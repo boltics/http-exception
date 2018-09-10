@@ -34,6 +34,7 @@ class ExceptionTest extends TestCase
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
+        $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
     }
 
     /**
@@ -53,6 +54,7 @@ class ExceptionTest extends TestCase
         $this->assertEquals(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getHttpCode());
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
+        $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
     }
 
     /**
@@ -156,5 +158,69 @@ class ExceptionTest extends TestCase
         $this->assertEquals(TestException::FIRST_ERROR['httpCode'], $e->getHttpCode());
         $this->assertEquals(TestException::FIRST_ERROR['message'], $e->getMessage());
         $this->assertEquals(TestException::FIRST_ERROR['errorCode'], $e->getCode());
+        $this->assertEquals(TestException::FIRST_ERROR['errorCode'], $e->getErrorCode());
+    }
+
+    /**
+     * @return void
+     */
+    public function testGettingDefaultAdditionalData()
+    {
+        $e = new TestException(TestException::FIRST_ERROR);
+
+        $this->assertEquals([], $e->getAdditionalData());
+    }
+
+    /**
+     * @return void
+     */
+    public function testGetterAndSetterOfAdditionalData()
+    {
+        $testingData = [__FUNCTION__];
+
+        $e = new TestException(TestException::FIRST_ERROR);
+        $e->setAdditionalData($testingData);
+
+        $this->assertEquals($testingData, $e->getAdditionalData());
+    }
+
+    /**
+     * @return void
+     */
+    public function testAppendAdditionalData()
+    {
+        $testingData = [
+            'a' => __FUNCTION__
+        ];
+
+        $e = new TestException(TestException::FIRST_ERROR);
+        $e->setAdditionalData($testingData);
+        $this->assertEquals($testingData, $e->getAdditionalData());
+
+        $testingData['b'] = __CLASS__;
+        $e->appendAdditionalData(__CLASS__, 'b');
+        $this->assertEquals($testingData, $e->getAdditionalData());
+    }
+
+    /**
+     * Test append additional data without key
+     *
+     * @return void
+     */
+    public function testAppendAdditionalDataWithoutKey()
+    {
+        $testingData = [__FUNCTION__];
+
+        $e = new TestException(TestException::FIRST_ERROR);
+        $e->setAdditionalData($testingData);
+        $this->assertEquals($testingData, $e->getAdditionalData());
+
+        $testingData[] = __CLASS__;
+        $e->appendAdditionalData(__CLASS__);
+        $this->assertEquals($testingData, $e->getAdditionalData());
+
+        $testingData[] = __NAMESPACE__;
+        $e->appendAdditionalData(__NAMESPACE__);
+        $this->assertEquals($testingData, $e->getAdditionalData());
     }
 }
