@@ -35,6 +35,33 @@ class ExceptionTest extends TestCase
         $this->assertEquals($errorInfo['message'], $e->getMessage());
         $this->assertEquals($errorInfo['errorCode'], $e->getCode());
         $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
+        $this->assertEmpty($e->getAdditionalData());
+    }
+
+    /**
+     * Test exception with normal construction and additional data
+     *
+     * @return void
+     */
+    public function testExceptionConstructorWithAdditionalData()
+    {
+        $errorInfo = [
+            'message' => 'QQ',
+            'errorCode' => 50,
+            'httpCode' => 400,
+        ];
+        $additionalData = [
+            'test',
+            'extra' => true
+        ];
+
+        $e = new Exception($errorInfo, $additionalData);
+
+        $this->assertEquals(Response::HTTP_BAD_REQUEST, $e->getHttpCode());
+        $this->assertEquals($errorInfo['message'], $e->getMessage());
+        $this->assertEquals($errorInfo['errorCode'], $e->getCode());
+        $this->assertEquals($errorInfo['errorCode'], $e->getErrorCode());
+        $this->assertEquals($additionalData, $e->getAdditionalData());
     }
 
     /**
