@@ -17,9 +17,12 @@ class Exception extends \Exception
     protected $additionalData = [];
 
     /**
+     * Constructor
      *
+     * @param array $exception Required array
+     * @param array $additionalData = []
      */
-    public function __construct(array $exception)
+    public function __construct(array $exception, array $additionalData = [])
     {
         $sanitizedException = $this->sanitizeException($exception);
 
@@ -32,6 +35,10 @@ class Exception extends \Exception
             $this->setHttpCode($exception['httpCode']);
         } else {
             $this->setHttpCode(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        if (!empty($additionalData)) {
+            $this->setAdditionalData($additionalData);
         }
     }
 
